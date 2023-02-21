@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeContorller {
     @GetMapping("/")
     public String index() {
-        return "index";
+        return "ServiceMain";
     }
 
 }

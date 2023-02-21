@@ -14,23 +14,23 @@ import java.util.List;
 @RequestMapping("/notice")
 public class NoticeController {
     private final NoticeService noticeService;
-    @GetMapping("/save")
+    @GetMapping("/NoticeSave")
     public String saveForm() {
-        return "save";
+        return "NoticeSave";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/NoticeSave")
     public String save(@ModelAttribute NoticeDTO noticeDto) {
 
         noticeService.save(noticeDto);
-        return "index";
+        return "ServiceMain";
     }
 
     @GetMapping("/")
     public String findAll(Model model) {
         List<NoticeDTO> noticeDTOList = noticeService.findAll();
-        model.addAttribute("noticeList", noticeDTOList);
-        return "list";
+        model.addAttribute("NoticeList", noticeDTOList);
+        return "NoticeList";
 
     }
 }
